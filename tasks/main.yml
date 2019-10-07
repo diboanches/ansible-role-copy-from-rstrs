@@ -1,0 +1,8 @@
+- name: Copy remote-to-remote
+  synchronize: 
+    src: "/path/{{ version }}/{{ item }}"
+    dest: "/tmp/{{ item }}"
+    mode: push
+  delegate_to: localhost 
+  with_items:
+    - "{{ rpm }}"
